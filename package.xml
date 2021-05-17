@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>simple_robot_path_planning</name>
+  <version>0.0.1</version>
+  <description>
+    This ROS package provides a step forward from the simple_robot_lidar project, by adding AMCL and 
+    Path Planning together with the move_base package.
+    The differential drive also returns to the original built in solution to give a single package solution.
+  </description>
+  
+  <maintainer email="gavin.kane@hs-emden-leer.de">Gavin Kane</maintainer>
+  <license>MIT</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>controller_manager</build_depend>
+  <run_depend>controller_manager</run_depend>
+</package>
