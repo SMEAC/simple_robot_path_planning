@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <param name="T" type="double" value="0.2"/>
+    <param name="dt" type="double" value="0.1"/>
+    
+ 
+	
+    <!-- for moving -->
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
+        <!-- Load common configuration files -->
+	<remap from="cmd_vel" to="/mobile_base_controller/cmd_vel"/>
+        <rosparam file="$(find simple_robot_path_planning)/config/move_base_params.yaml" command="load" />
+        <rosparam file="$(find simple_robot_path_planning)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find simple_robot_path_planning)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+
+        <!-- Load global navigation specific parameters -->
+        <rosparam file="$(find simple_robot_path_planning)/config/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find simple_robot_path_planning)/config/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find simple_robot_path_planning)/config/base_local_planner_params.yaml" command="load" />
+    </node>
+</launch>

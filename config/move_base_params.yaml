@@ -1,0 +1,3 @@
+shutdown_costmaps: true
+controller_frequency: 15.0
+planner_frequency: 1.0
